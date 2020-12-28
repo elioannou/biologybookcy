@@ -178,7 +178,7 @@
 		<div class="mu-heading-area">
 		  <h2 class="mu-heading-title">Περιεχόμενα</h2>
 		  <span class="mu-header-dot"></span>
-		  <p>Σε αυτό θα βρείτε 300 ασκήσεις και τις λύσεις τους, με βάση το νέο αναλυτικό πρόγραμμα του
+		  <p>Σε αυτό το βιβλίο θα βρείτε 300 ασκήσεις και τις λύσεις τους, με βάση το νέο αναλυτικό πρόγραμμα του
 		    Υπουργείου Παιδείας (2020). Συμπεριλαμβάνει επίσης κι ένα δείγμα γραπτού Παγκύπριων Εξετάσεων.</p>
 		</div>
 
@@ -552,17 +552,20 @@
 		<div class="mu-heading-area">
 		  <h2 class="mu-heading-title">Παραγγελία online</h2>
 		  <span class="mu-header-dot"></span>
-		  <p>Συμπληρώστε την πιο κάτω φόρμα για να καταχωρηθεί η παραγγελεία σας.</p>
-		  <p>Η παραγγελία σας αποστέλεται εντελώς δωρεάν σε ACS της επιλογής σας εντός 1-2 ημερών.</p>
-		  <p>Η πηρωμή γίνεται με αντικαταβολή κατα την παραλαβή της παραγγελίας.</p>
 		</div>
-
+		<div class="mu-heading-instructions">
+		  <p>Συμπληρώστε την πιο κάτω φόρμα για να καταχωρηθεί η παραγγελία σας.</p>
+		  <ul>
+		    <li>Η παραγγελία σας αποστέλεται εντελώς δωρεάν σε ACS της επιλογής σας εντός 1-2 ημερών.</li>
+		    <li>Η πηρωμή γίνεται με αντικαταβολή κατα την παραλαβή της παραγγελίας.</li>
+		  </ul>
+		</div>
 		<!-- Start Contact Content -->
 		<div class="mu-contact-content">
 
 		  <div id="form-messages"></div>
-		  <form id="ajax-contact" method="post" action="return
-								0;" class="mu-contact-form">
+
+		  <form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
 		    <div class="form-group">
 		      <input type="text" class="form-control" placeholder="Όνομα" id="name" name="name" required>
 		    </div>
@@ -575,6 +578,7 @@
 		    </div>
 		    <button type="submit" class="mu-send-msg-btn"><span>SUBMIT</span></button>
 		  </form>
+
 
 		</div>
 		<!-- End Contact Content -->
@@ -613,9 +617,7 @@
       </div>
 
     </footer>
-    <!-- End footer -->
-
-    
+    <!-- End footer -->    
     
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!-- Include all compiled

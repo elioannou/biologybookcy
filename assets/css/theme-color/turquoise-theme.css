@@ -31,8 +31,8 @@ Author URI : http://www.markups.io/
 .mu-social-media a:focus,
 .mu-order-btn:hover,
 .mu-order-btn:focus {
-	border: 1px solid #1abc9c;
-	color: ;
+	border: 3px solid #1abc9c;
+	color: #1abc9c;
 }
 
 .mu-send-msg-btn {

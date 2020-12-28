@@ -481,6 +481,17 @@ button:focus {
 	width: 100%;
 }
 
+.mu-heading-instructions {
+	display: inline;
+	float: left;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.mu-heading-instructions ul {
+	padding-left: 20px;
+}
+
 .mu-heading-title {
 	color: #1c1b1b;
 	margin-bottom: 15px;
@@ -920,7 +931,7 @@ button:focus {
 }
 
 .mu-contact-form .form-control:focus {
-	background-color: #fff;
+    background-color: #fff;
     outline: 0;
     box-shadow: none;    
 } 
