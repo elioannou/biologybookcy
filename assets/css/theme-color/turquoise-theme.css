@@ -14,11 +14,13 @@ Author URI : http://www.markups.io/
 .mu-footer-area a:hover,
 .mu-footer-area a:focus,
 .mu-hero-left .mu-primary-btn,
-.mu-hero-left .mu-primary-btn:hover,
-.mu-hero-left .mu-primary-btn:focus,
 .mu-single-counter i,
 .counter-value {
 	color: #1abc9c;
+}
+
+.mu-primary-btn {
+    	border: solid 3px #1abc9c;
 }
 
 .mu-send-msg-btn:hover,
@@ -30,7 +32,7 @@ Author URI : http://www.markups.io/
 .mu-order-btn:hover,
 .mu-order-btn:focus {
 	border: 1px solid #1abc9c;
-	color: #1abc9c;
+	color: ;
 }
 
 .mu-send-msg-btn {

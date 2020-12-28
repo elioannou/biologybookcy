@@ -28,7 +28,6 @@ Version: 1.0
 /*--------------------*/
 /* BASIC TYPOGRAPHY */
 /*--------------------*/
-
 body,
 html {
 	overflow-x:hidden;
@@ -36,7 +35,7 @@ html {
 
 body {
 	font-family: 'Open sans', sans-serif;
-	font-size: 20px;
+	font-size: 17px;
 	letter-spacing: 0.5px;
 	line-height: 1.5;
 	color: #1c1b1b;
@@ -70,7 +69,6 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Andika New Basic', sans-serif;
     font-weight: 500;
 	margin-top: 0;
 }
@@ -206,10 +204,9 @@ button:focus {
 .mu-primary-btn {
 	background-color: transparent;
 	border-radius: 100px;
-	border: solid 1px #ffffff;
 	color: #fff;
 	display: inline-block;
-	font-size: 20px;
+	font-size: 17px;
 	font-weight: 400;
 	letter-spacing: 1px;
 	padding: 12px 25px;
@@ -219,8 +216,7 @@ button:focus {
 
 .mu-primary-btn:hover,
 .mu-primary-btn:focus {
-	background-color: #fff;
-	color: #000;
+    outline: none;
 }
 
 .mu-send-msg-btn {
@@ -264,7 +260,6 @@ button:focus {
 .navbar-default .navbar-brand {
 	color: #fff;
 	font-size: 25px;
-    font-family: 'Andika New Basic', sans-serif;
     font-weight: 500;
 	margin-top: -11px;
 }
@@ -380,6 +375,11 @@ button:focus {
 	margin-top: 20px;
 	background-color: #fff;
 	font-weight: 600;
+}
+
+.mu-hero-left .mu-primary-btn:focus,
+.mu-hero-left .mu-primary-btn:hover {
+    border: 3px solid #fff;
 }
 
 .mu-hero-left span {
@@ -530,7 +530,7 @@ button:focus {
 
 
 #mu-video-review {
-	background-image: url(assets/images/video-review-bg.jpeg);
+	background-image: url(assets/images/video-review-bg.png);
 	background-attachment: fixed;
 	background-size: cover;
 	display: inline;
@@ -546,7 +546,7 @@ button:focus {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	opacity: 0.84;
+	opacity: 0.88;
 }
 
 .mu-video-review-area {
@@ -564,6 +564,12 @@ button:focus {
 .mu-video-review-area .mu-header-dot {
 	background-color: #f8f8f8;
 }
+
+.mu-video-review-area a:hover,
+.mu-video-review-area a:focus {
+	color: #2f2f2f;
+}
+
 
 .mu-video-review-content {
 	display: inline;
@@ -634,13 +640,12 @@ button:focus {
 }
 
 .mu-author-social a {
+        background-color: #fff;
 	display: inline-block;
-	font-size: 16px;
+	font-size: 20px;
 	padding: 5px;
 	margin-right: 10px;
-	color: #fff;
-	width: 35px;
-	text-align: center;
+	width: 100%;
 }
 
 
@@ -673,9 +678,7 @@ button:focus {
 }
 
 .mu-pricing-single {
-	background-color: #fff;
-	color: #555;
-	display: inline;
+    /*	background-color: #fff; */
 	float: left;
 	text-align: center;
 	margin-top: 20px;
@@ -697,16 +700,11 @@ button:focus {
 	margin-bottom: 0;
 }
 
-.mu-pricing-single-head .mu-price-tag {
-	font-size: 55px;
+.mu-price-tag {
+	font-size: 25px;
 	font-weight: 700;
 	margin-bottom: 0;
 	padding: 15px 0 20px;
-}
-
-.mu-pricing-single-head .mu-price-tag span {
-	font-size: 22px;
-	margin-right: -10px;
 }
 
 .mu-price-feature {
@@ -725,6 +723,15 @@ button:focus {
 	display: inline-block;
 	float: left;
 	width: 100%;
+}
+
+.mu-pricing-social {
+    color: #fff;
+    display: inline;
+    font-size: 70px;
+    float: left;
+    margin-top: 25px;
+    width: 100%;
 }
 
 .mu-order-btn {
@@ -758,7 +765,7 @@ button:focus {
 /*--------------------*/
 
 #mu-testimonials {
-	background-image: url("assets/images/testimonials-bg.jpeg");
+	background-image: url("assets/images/testimonials-bg.png");
 	background-position: center center;
 	background-size: cover;
 	background-attachment: fixed;
