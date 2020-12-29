@@ -557,24 +557,44 @@
 		  <p>Συμπληρώστε την πιο κάτω φόρμα για να καταχωρηθεί η παραγγελία σας.</p>
 		  <ul>
 		    <li>Η παραγγελία σας αποστέλεται εντελώς δωρεάν σε ACS της επιλογής σας εντός 1-2 ημερών.</li>
-		    <li>Η πηρωμή γίνεται με αντικαταβολή κατα την παραλαβή της παραγγελίας.</li>
+		    <li>Η πληρωμή γίνεται με αντικαταβολή κατα την παραλαβή της παραγγελίας.</li>
+		    <li>Αν έχετε εναλλακτικές οδηγίες αποστολής παρακαλώ γράψτε τις στο κουτί μηνύματος .</li>
 		  </ul>
 		</div>
 		<!-- Start Contact Content -->
 		<div class="mu-contact-content">
 
 		  <div id="form-messages"></div>
-
 		  <form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
 		    <div class="form-group">
 		      <input type="text" class="form-control" placeholder="Όνομα" id="name" name="name" required>
 		    </div>
 		    <div class="form-group">
-		      <input type="" class="form-control" placeholder="Ηλεκτρονικό ταχυδρομείο" id="email" name="email" required>
+		      <input type="tel" class="col-md-12" placeholder="Τηλέφωνο" id="phone" name="phone" required>
+		    </div>
+		    <div class="form-group row">
+		      <label for="acs" class="col-sm-3 col-form-label" >Σημείο ACS</label>
+		      <select id="acs" name="acs" class="col-sm-4 col-form-control">
+			<option selected>Επιλέξτε...</option>
+			<option value="Latsia">LATSIA</option>
+			<option value="Ayia Napa">AYIA NAPA</option>
+			<option value="Tsireio">TSIREIO</option>
+			<option value="omonia">OMONOIA</option>
+		      </select>
+		      <label for="items" class="col-sm-2 col-form-label" >Τεμάχια</label>
+		      <select id="items" name="items" class="col-sm-2 col-form-control">
+			<option selected value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+		      </select>
 		    </div>
 		    <div class="form-group">
-		      <textarea class="form-control" placeholder="Διεύθυνση" id="message" name="message"
-		      required></textarea>
+		      <input type="" class="form-control" placeholder="Ηλεκτρονικό ταχυδρομείο (προαιρετικό)" id="email" name="email">
+		    </div>
+		    <div class="form-group">
+		      <textarea class="form-control" placeholder="Μήνυμα (προαιρετικό)" id="message" name="message"></textarea>
 		    </div>
 		    <button type="submit" class="mu-send-msg-btn"><span>SUBMIT</span></button>
 		  </form>
