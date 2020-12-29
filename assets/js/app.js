@@ -29,7 +29,9 @@ $(function() {
 			$(formMessages).text(response);
 
 			// Clear the form.
-			$('#name').val('');
+		    $('#name').val('');
+		    $('#phone').val('');
+		    $('#acs').val('');
 			$('#email').val('');
 			$('#subject').val('');
 			$('#message').val('');

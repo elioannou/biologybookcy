@@ -16,7 +16,7 @@
         $message = trim($_POST["message"]);
 
         // Check that data was sent to the mailer.
-        if ( empty($name) OR empty($phone) OR empty($acs) OR ( !empty($email) AND !filter_var($email, FILTER_VALIDATE_EMAIL))) {
+        if ( empty($name)  OR empty($phone) OR empty($acs) OR ( !empty($email) AND !filter_var($email, FILTER_VALIDATE_EMAIL))) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
             echo "Υπάρχει κάποιο λάθος στη φόρμα. Παρακαλώ συμπληρώστε σωστά τα απαιτούμενα στοιχεία.";
@@ -24,7 +24,7 @@
         }
 
         // Set the recipient email address.
-        $recipient = "sendtolefteris@gmail.com";
+        $recipient = "sendtolefteris@gmail.com,mixalisef@gmail.com";
 
         // Set the email subject.
         $subject = "New order from $name $phone";

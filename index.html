@@ -568,15 +568,15 @@
 		  <div id="form-messages"></div>
 		  <form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
 		    <div class="form-group">
-		      <input type="text" class="form-control" placeholder="Όνομα" id="name" name="name" required>
-		    </div>
+		      <input type="text" class="col-md-12" placeholder="Όνομα" id="name" name="name" required>
+		    </div><span class="validity"></span>
 		    <div class="form-group">
 		      <input type="tel" class="col-md-12" placeholder="Τηλέφωνο" id="phone" name="phone" pattern="[0-9]{8}"required><span class="validity"></span>
 		    </div>
 		    <div class="form-group row">
 		      <label for="acs" class="col-sm-3 col-form-label" >Σημείο ACS</label>
-		      <select id="acs" name="acs" class="col-sm-4 col-form-control">
-			<option selected>Επιλέξτε...</option>
+		      <select id="acs" name="acs" class="col-sm-4 col-form-control" required><span class="validity"></span>
+			<option selected value="">Επιλέξτε...</option>
 			<option value="LATSIA">   LATSIA</option>
 			<option value="AYIA NAPA"> AYIA NAPA</option>
 			<option value="AGROS">    AGROS</option>
@@ -620,7 +620,7 @@
 			<option value="CHOIROKOITIA"> CHOIROKOITIA </option>
 		      </select>
 		      <label for="items" class="col-sm-2 col-form-label" >Τεμάχια</label>
-		      <select id="items" name="items" class="col-sm-2 col-form-control">
+		      <select id="items" name="items" class="col-sm-2 col-form-control" required>
 			<option selected value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
