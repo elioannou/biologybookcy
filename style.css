@@ -442,6 +442,12 @@ button:focus {
 	background: #fff;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .counter-value {
 	font-size: 35px;
 	font-weight: 700;
@@ -910,7 +916,7 @@ button:focus {
 }
 
 .mu-contact-form .form-group label {
-    font-weight: normal !important;
+    font-weight: normal;
 }
 
 
@@ -1113,7 +1119,8 @@ button:focus {
 	}
 
 	.mu-primary-btn {
-		font-size: 14px;
+	        border: 3px solid #fff;
+		font-size: 18px;
 		padding: 12px 22px;
 	}
 
@@ -1211,7 +1218,8 @@ button:focus {
 	}
 
 	.mu-primary-btn {
-		font-size: 12px;
+	        border: 3px solid #fff;
+		font-size: 18px;
 		padding: 10px 12px;
 		margin-top: 15px;
 	}

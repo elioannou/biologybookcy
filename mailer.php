@@ -27,19 +27,18 @@
         $recipient = "sendtolefteris@gmail.com,mixalisef@gmail.com";
 
         // Set the email subject.
-        $subject = "New order from $name $phone";
+        $subject = "New book order from $name";
 
         // Build the email content.
-        $email_content = "Name: $name\n";
-        $email_content .= "Phone: $phone\n";
-        $email_content .= "ACS Store: $acs\n";
-        $email_content .= "Items: $items\n";
-        $email_content .= "Email: $email\n\n";
-        // $email_content .= "Subject: $cont_subject\n";
-        $email_content .= "Message:\n$message\n";
+        $email_content = "Όνομα: $name\n";
+        $email_content .= "Τηλέφωνο: $phone\n";
+        $email_content .= "Σημείο ACS : $acs\n";
+        $email_content .= "Τεμάχια: $items\n";
+        if (!empty($email)) $email_content .= "Email: $email\n\n";
+        if (!empty($message)) $email_content .= "Message:\n$message\n";
 
         // Build the email headers.
-        $email_headers = "From: Book order <order@book.com>";
+        $email_headers = "From: Book orders<order@book.com>";
 
         // Send the email.
         if (mail($recipient, $subject, $email_content, $email_headers)) {
