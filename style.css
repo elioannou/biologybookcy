@@ -909,10 +909,15 @@ button:focus {
 	text-align: center;
 }
 
+.mu-contact-form .form-group label {
+    font-weight: normal !important;
+}
+
+
 .mu-contact-form .form-group input {
 	background: transparent;
 	color: #333;
-	font-size: 15px;
+	font-size: 17px;
 	border: 1px solid #ccc;
 	border-radius: 20px;
 	padding: 6px 15px;
@@ -925,7 +930,7 @@ button:focus {
 	background: transparent;
 	border: 1px solid #ccc;
 	border-radius: 20px;
-	font-size: 18px;
+	font-size: 17px;
 	padding: 15px;
 	height: 190px;
 }

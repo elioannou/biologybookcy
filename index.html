@@ -345,9 +345,9 @@
 			<p>Πτυχιούχος Τμήματος Βιολογίας Πανεπιστημίου Αθηνών και καθηγητής Βιολογίας σε ιδιωτικό
 			  φροντιστήριο</p>
 			<p>
-			  Μέσα από χρόνια εμπειρίας στη διδασκαλία του μαθήματος της Βιολογίας, ο Μιχάλης εντόπισε την
-			  έλλειψη υλικού προετοιμασίας και εξάσκησης που να είναι προσαρμοσμένο στην πρόσφατα
-			  αναθεωρημένη ύλη του μαθήματος Βιολογίας. </p>
+			  Μέσα από χρόνια εμπειρίας στη διδασκαλία του μαθήματος της Βιολογίας, ο καθηγητής Μιχάλης
+			  Ευθυβούλου εντόπισε την έλλειψη υλικού προετοιμασίας και εξάσκησης για μαθητές Γ' Λυκείου που να είναι προσαρμοσμένο
+			  στην πρόσφατα αναθεωρημένη ύλη του μαθήματος Βιολογίας. </p>
 			<p>Επικοινωνήστε με τον Μιχάλη για οποιαδήποτε βοήθεια ή διευκρίνηση.</p>
 			<div class="mu-author-social">
 			  <a href="tel:+35799450616"> <i class="fas fa-phone"></i> 99 450616</a>
@@ -556,7 +556,8 @@
 		<div class="mu-heading-instructions">
 		  <p>Συμπληρώστε την πιο κάτω φόρμα για να καταχωρηθεί η παραγγελία σας.</p>
 		  <ul>
-		    <li>Η παραγγελία σας αποστέλεται εντελώς δωρεάν σε ACS της επιλογής σας εντός 1-2 ημερών.</li>
+		    <li>Η παραγγελία σας αποστέλεται εντελώς δωρεάν σε ACS της επιλογής σας εντός 1-2
+		    ημερών. <a href="https://cyp.acscourier.net/en/store-locator">Βρείτε τα διαθέσιμα καταστήματα εδώ.</a></li>
 		    <li>Η πληρωμή γίνεται με αντικαταβολή κατα την παραλαβή της παραγγελίας.</li>
 		    <li>Αν έχετε εναλλακτικές οδηγίες αποστολής παρακαλώ γράψτε τις στο κουτί μηνύματος .</li>
 		  </ul>
@@ -570,16 +571,53 @@
 		      <input type="text" class="form-control" placeholder="Όνομα" id="name" name="name" required>
 		    </div>
 		    <div class="form-group">
-		      <input type="tel" class="col-md-12" placeholder="Τηλέφωνο" id="phone" name="phone" required>
+		      <input type="tel" class="col-md-12" placeholder="Τηλέφωνο" id="phone" name="phone" pattern="[0-9]{8}"required><span class="validity"></span>
 		    </div>
 		    <div class="form-group row">
 		      <label for="acs" class="col-sm-3 col-form-label" >Σημείο ACS</label>
 		      <select id="acs" name="acs" class="col-sm-4 col-form-control">
 			<option selected>Επιλέξτε...</option>
-			<option value="Latsia">LATSIA</option>
-			<option value="Ayia Napa">AYIA NAPA</option>
-			<option value="Tsireio">TSIREIO</option>
-			<option value="omonia">OMONOIA</option>
+			<option value="LATSIA">   LATSIA</option>
+			<option value="AYIA NAPA"> AYIA NAPA</option>
+			<option value="AGROS">    AGROS</option>
+			<option value="EPISKOPI"> EPISKOPI</option>
+			<option value="ACS STRAKKA-PANO LAKATAMIA-DEFTERA"> ACS STRAKKA-PANO LAKATAMIA-DEFTERA</option>
+			<option value="YPSONAS">  YPSONAS</option>
+			<option value="CORAL PS31 STROVOLOS"> CORAL PS31 STROVOLOS</option>
+			<option value="ATHIENOU"> ATHIENOU </option>
+			<option value="PARALIMNI"> PARALIMNI </option>
+			<option value="ARTEMIDOS"> ARTEMIDOS</option>
+			<option value="ASTROMERITIS"> ASTROMERITIS</option>
+			<option value="ARADIPPOU (+HUB)"> ARADIPPOU (+HUB)</option>
+			<option value="STROVOLOS IND.AREA"> STROVOLOS IND.AREA </option>
+			<option value="DERYNIA">  DERYNIA</option>
+			<option value="ENGOMI">   ENGOMI</option>
+			<option value="ERGATES">  ERGATES </option>
+			<option value="KEDRIKA GRAFIA KIPROU"> KEDRIKA GRAFIA KIPROU</option>
+			<option value="KITI">     KITI </option>
+			<option value="KOKKINOTRIMITHIA"> KOKKINOTRIMITHIA </option>
+			<option value="KORNOS">   KORNOS </option>
+			<option value="LAKATAMIA"> LAKATAMIA </option>
+			<option value="LARNAKA - CENTRE"> LARNAKA - CENTRE </option>
+			<option value="AGIOS NICOLAOS"> AGIOS NICOLAOS </option>
+			<option value="KOLONAKIOU"> KOLONAKIOU </option>
+			<option value="CITY CENTRE"> CITY CENTRE </option>
+			<option value="HUB NICOSIA"> HUB NICOSIA </option>
+			<option value="SOLEAS AREA"> SOLEAS AREA</option>
+			<option value="MICHALAKOPOULOU"> MICHALAKOPOULOU </option>
+			<option value="LIOPETRI"> LIOPETRI </option>
+			<option value="XYLOFAGOU"> XYLOFAGOU</option>
+			<option value="OMONOIA">  OMONOIA </option>
+			<option value="ORMIDIA">  ORMIDIA </option>
+			<option value="PALLOURIOTISSA"> PALLOURIOTISSA</option>
+			<option value="PAPHOS">   PAPHOS </option>
+			<option value="PAPHOS COURTS"> PAPHOS COURTS </option>
+			<option value="POLIS CHRYSOCHOUS"> POLIS CHRYSOCHOUS </option>
+			<option value="PERA CHORIO NISOU"> PERA CHORIO NISOU</option>
+			<option value="STROVOLOS"> STROVOLOS </option>
+			<option value="TSIREIO">  TSIREIO</option>
+			<option value="CHLORAKAS"> CHLORAKAS</option>
+			<option value="CHOIROKOITIA"> CHOIROKOITIA </option>
 		      </select>
 		      <label for="items" class="col-sm-2 col-form-label" >Τεμάχια</label>
 		      <select id="items" name="items" class="col-sm-2 col-form-control">
