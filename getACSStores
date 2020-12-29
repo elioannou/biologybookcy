@@ -1,3 +1,0 @@
-url https://cyp.acscourier.net/en/store-locator > acs-stores.html
-grep -oP '\{name:"\K[^"]+' acs-stores.html > acs-stores.list
-paste -d' ' acs-stores.o acs-stores.list > acs-stores.new
