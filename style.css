@@ -548,11 +548,12 @@ button:focus {
 
 #mu-video-review {
 	background-image: url(assets/images/video-review-bg.png);
-	background-attachment: fixed;
+	background-position: center center;
 	background-size: cover;
+	background-attachment: fixed;
 	display: inline;
-	position: relative;
 	float: left;
+	position: relative;
 	width: 100%;
 }
 
@@ -563,7 +564,7 @@ button:focus {
 	top: 0;
 	right: 0;
 	bottom: 0;
-	opacity: 0.88;
+	opacity: 0.84;
 }
 
 .mu-video-review-area {
