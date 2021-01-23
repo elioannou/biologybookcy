@@ -41,7 +41,7 @@
         $email_headers = "From: Biology book website<order@book.com>";
 
         // Send the email.
-        if (mail($recipient, $subject, $email_content, $email_headers)) {
+        if (mail($recipient, '=?UTF-8?B?'.base64_encode($subject).'?=', $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
             http_response_code(200);
             echo "Ευχαριστούμε! Η παραγγελία σας έχει σταλεί.";
