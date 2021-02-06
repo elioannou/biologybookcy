@@ -38,7 +38,7 @@
         if (!empty($message)) $email_content .= "Message:\n$message\n";
 
         // Build the email headers.
-        $email_headers = "From: Biology book website<order@book.com>";
+        $email_headers = "From: Biology book website<orders@biologybookcy.com>";
 
         // Send the email.
         if (mail($recipient, '=?UTF-8?B?'.base64_encode($subject).'?=', $email_content, $email_headers)) {
