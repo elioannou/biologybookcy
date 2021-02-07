@@ -3,7 +3,7 @@
     // http://blog.teamtreehouse.com/create-ajax-contact-form
     // Added input sanitizing to prevent injection
 
-    // Only process POST reqeusts.
+    // Only process POST requests.
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Get the form fields and remove whitespace.
         $name = strip_tags(trim($_POST["name"]));
@@ -23,11 +23,21 @@
             exit;
         }
 
+        // Log the entry to a file
+        $list="/home/ei233/mail-list";
+        $number = count(file($list)); // Get number of previous entries
+        $curr_number = $number+1;
+
+        $listfile = fopen($list, "a");// or die("Unable to open file ".$list);
+        $new_entry = $curr_number ." ". date("d/m/Y") ." ". date("H:i:s") ." ". $name ." ". $phone ." ". $acs ." ". $items ." ". $email ." ". $message."\n";
+        fwrite($listfile,$new_entry);
+        fclose($listfile);           
+
         // Set the recipient email address.
-        $recipient = "sendtolefteris@gmail.com,mixalisef@gmail.com";
+        $recipient = "Lefteris <sendtolefteris@gmail.com>";//,Michalis<mixalisef@gmail.com";
 
         // Set the email subject.
-        $subject = "New book order from $name";
+        $subject = "Νέα βιβλιοπαραγγελία από $name";
 
         // Build the email content.
         $email_content = "Όνομα: $name\n";
@@ -44,17 +54,45 @@
         if (mail($recipient, '=?UTF-8?B?'.base64_encode($subject).'?=', $email_content, $email_headers)) {
             // Set a 200 (okay) response code.
             http_response_code(200);
-            echo "Ευχαριστούμε! Η παραγγελία σας έχει σταλεί.";
+            echo "Η παραγγελία σας έχει καταχωρηθεί επιτυχώς. Ευχαριστούμε!";
         } else {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
-            echo "Δυστυχώς η παραγγελία σας δεν έχει σταλεί (Error 500). Παρακαλώ δοκιμάστε αργότερα.";
+            echo "Δυστυχώς η παραγγελία σας δεν έχει καταχωρηθεί (Error 500). Παρακαλώ δοκιμάστε αργότερα.";
         }
+
+        // Send sms
+        $keyfile = fopen("/home/ei233/key", "r") or die("Unable to open file with sms key");
+        $key=fgets($keyfile);
+        fclose($keyfile);
+
+        $url = "https://www.cyta.com.cy/cytamobilevodafone/dev/websmsapi/sendsms.aspx";
+
+        $curl = curl_init($url);
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_USERAGENT, 'HTTP/1.1');
+
+        $headers = array("Host: www.cyta.com.cy", "Content-Type: application/xml; charset='utf-8'", "Connection: close",);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+        
+        $data = "<?xml version='1.0' encoding='UTF-8' ?>  <websmsapi> <version>1.0</version> <username>explor3r</username> <secretkey>".$key."</secretkey> <recipients> <count>1</count> <mobiles><m>".$phone."</m> </mobiles> </recipients> <message>Η ΠΑΡΑΓΓΕΛΙΑ ΣΑΣ ΕΧΕΙ ΚΑΤΑΧΩΡΗΘΕΙ. ΘΑ ΕΙΔΟΠΟΙΗΘΕΙΤΕ ΑΠΟ ΤΟ ACS " . $acs." ΓΙΑ ΠΑΡΑΛΑΒΗ. ΣΑΣ ΕΥΧΑΡΙΣΤΟΥΜΕ!</message><language>el</language> </websmsapi>";
+
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+
+//for debug only!
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+
+        $resp = curl_exec($curl);
+        curl_close($curl);
+
 
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
         http_response_code(403);
-        echo "Δυστυχώς η παραγγελία σας δεν έχει σταλεί (Error 403). Παρακαλώ δοκιμάστε αργότερα.";
+        echo "Δυστυχώς η παραγγελία σας δεν έχει καταχωρηθεί (Error 403). Παρακαλώ δοκιμάστε αργότερα.";
     }
 
 ?>
