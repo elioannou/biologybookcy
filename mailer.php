@@ -29,12 +29,12 @@
         $curr_number = $number+1;
 
         $listfile = fopen($list, "a");// or die("Unable to open file ".$list);
-        $new_entry = $curr_number ." ". date("d/m/Y") ." ". date("H:i:s") ." ". $name ." ". $phone ." ". $acs ." ". $items ." ". $email ." ". $message."\n";
+        $new_entry = $curr_number ." ". date("d/m/Y") ." ". date("H:i:s") ." ". $name ." ". $phone ." ". $acs ." ". $items ." ". $email ." ". $message." ";
         fwrite($listfile,$new_entry);
         fclose($listfile);           
 
         // Set the recipient email address.
-        $recipient = "Lefteris <sendtolefteris@gmail.com>";//,Michalis<mixalisef@gmail.com";
+        $recipient = "Lefteris <sendtolefteris@gmail.com>, Michalis <mixalisef@gmail.com>";
 
         // Set the email subject.
         $subject = "Νέα βιβλιοπαραγγελία από $name";
@@ -77,17 +77,21 @@
         $headers = array("Host: www.cyta.com.cy", "Content-Type: application/xml; charset='utf-8'", "Connection: close",);
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
         
-        $data = "<?xml version='1.0' encoding='UTF-8' ?>  <websmsapi> <version>1.0</version> <username>explor3r</username> <secretkey>".$key."</secretkey> <recipients> <count>1</count> <mobiles><m>".$phone."</m> </mobiles> </recipients> <message>Η ΠΑΡΑΓΓΕΛΙΑ ΣΑΣ ΕΧΕΙ ΚΑΤΑΧΩΡΗΘΕΙ. ΘΑ ΕΙΔΟΠΟΙΗΘΕΙΤΕ ΑΠΟ ΤΟ ACS " . $acs." ΓΙΑ ΠΑΡΑΛΑΒΗ. ΣΑΣ ΕΥΧΑΡΙΣΤΟΥΜΕ!</message><language>el</language> </websmsapi>";
+        $data = "<?xml version='1.0' encoding='UTF-8' ?>  <websmsapi> <version>1.0</version> <username>BiologyBookCy</username> <secretkey>".$key."</secretkey> <recipients> <count>1</count> <mobiles><m>".$phone."</m> </mobiles> </recipients> <message>Η ΠΑΡΑΓΓΕΛΙΑ ΣΑΣ ΕΧΕΙ ΚΑΤΑΧΩΡΗΘΕΙ. ΘΑ ΕΙΔΟΠΟΙΗΘΕΙΤΕ ΑΠΟ ΤΟ ACS " . $acs." ΓΙΑ ΠΑΡΑΛΑΒΗ. ΣΑΣ ΕΥΧΑΡΙΣΤΟΥΜΕ!</message><language>el</language> </websmsapi>";
 
         curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
-
-//for debug only!
+        // for debug only!
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
         $resp = curl_exec($curl);
         curl_close($curl);
 
+        $listfile = fopen($list, "a");// or die("Unable to open file ".$list);
+        $resp=strstr($resp,"\n");
+        $resp=trim($resp)."\n";
+        fwrite($listfile,$resp);
+        fclose($listfile);
 
     } else {
         // Not a POST request, set a 403 (forbidden) response code.
