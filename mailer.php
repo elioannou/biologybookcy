@@ -29,7 +29,7 @@
         $curr_number = $number+1;
 
         $listfile = fopen($list, "a");// or die("Unable to open file ".$list);
-        $new_entry = $curr_number ." ". date("d/m/Y") ." ". date("H:i:s") ." ". $name ." ". $phone ." ". $acs ." ". $items ." ". $email ." ". $message." ";
+        $new_entry = $curr_number ."\t". date("d/m/Y") ."\t". date("H:i:s") ."\t". $name ."\t". $phone ."\t". $acs ."\t". $items ."\t". $email ."\t". $message."\t";
         fwrite($listfile,$new_entry);
         fclose($listfile);           
 
