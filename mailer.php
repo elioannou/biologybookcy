@@ -14,12 +14,25 @@
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         // $cont_subject = trim($_POST["subject"]);
         $message = trim($_POST["message"]);
-
+   
         // Check that data was sent to the mailer.
         if ( empty($name)  OR empty($phone) OR empty($acs) OR ( !empty($email) AND !filter_var($email, FILTER_VALIDATE_EMAIL))) {
             // Set a 400 (bad request) response code and exit.
             http_response_code(400);
-            echo "Υπάρχει κάποιο λάθος στη φόρμα. Παρακαλώ συμπληρώστε σωστά τα απαιτούμενα στοιχεία.";
+            echo "Παρακαλώ συμπληρώστε όλα τα απαιτούμενα στοιχεία.";
+            exit;
+        }
+
+        if ( !ctype_digit($phone) ) {
+            http_response_code(400);
+            echo "Μή έγκυρος αριθμός τηλεφώνου. Παρακαλώ δοκιμάστε ξανά.";
+            exit;
+        }
+
+        $hasLink = strpos($message, 'http') !== false || strpos($message, 'www.') !== false;
+        if ( $hasLink ) {
+            http_response_code(400);
+            echo "Δεν επιτρέπονται συνδέσμοι στο μήνημα. Παρακαλώ δοκιμάστε ξανά.";
             exit;
         }
 
