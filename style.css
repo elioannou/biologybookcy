@@ -706,11 +706,14 @@ button:focus {
 }
 
 .mu-pricing-single-head {
+    	border-top: 1px solid #eee;
 	border-bottom: 1px solid #eee;
 	display: inline-block;
 	float: left;
 	margin-bottom: 10px;
 	width: 100%;
+	padding: 10px;
+	font-size: 28px;
 }
 
 .mu-pricing-single-head h4 {
