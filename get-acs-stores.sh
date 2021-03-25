@@ -8,13 +8,16 @@ if [ -f acs-raw-list ]; then
     if [ "$DIFF" ]; then
 	echo "Stores changed"
 	echo "$DIFF"
+	cp latest-acs-raw-list new-acs-raw-list
+	echo "New acs raw list has been created"
 	echo "##### GENERATING NEW LIST #######"
 	sed -i 's/ACS STRAKKA/STRAKKA/g' latest-acs-raw-list
 	sed -i 's/CITY CENTRE/CITY CENTRE NICOSIA/g' latest-acs-raw-list
 	sed -i 's/KOLONAKIOU/KOLONAKIOU YERMASOYIA/g' latest-acs-raw-list
 	sed -i 's/MICHALAKOPOULOU/MICHALAKOPOULOU NICOSIA/g' latest-acs-raw-list
 	sed -i 's/KEDRIKA GRAFIA KIPROU/KEDRIKA GRAFIA KIPROU STROVOLOS/g' latest-acs-raw-list
-	sed -i 's/ARTEMIDOS/ARTEMIDOS LARNAKA/g' latest-acs-raw-list 
+	sed -i 's/ARTEMIDOS/ARTEMIDOS LARNAKA/g' latest-acs-raw-list
+	sed -i 's/LIBERTY SQR/LIBERTY SQR NICOSIA/g' latest-acs-raw-list 
 	sort latest-acs-raw-list -o latest-acs-raw-list
 	sed -i -e 's/^/<option>/' latest-acs-raw-list
 	#	sed -i -e 's/$/">/' latest-acs-list-tmp
