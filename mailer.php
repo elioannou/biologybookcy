@@ -23,9 +23,9 @@
             exit;
         }
 
-        if ( !ctype_digit($phone) ) {
+        if ( !ctype_digit($phone) OR strlen($phone)!=8 OR substr($phone, 0, 1) != 9 ) {
             http_response_code(400);
-            echo "Μή έγκυρος αριθμός τηλεφώνου. Παρακαλώ δοκιμάστε ξανά.";
+            echo "Μη έγκυρος αριθμός τηλεφώνου. Απαιτείται κυπριακός αριθμός χωρίς κωδικό χώρας.";
             exit;
         }
 
