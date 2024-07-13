@@ -36,16 +36,6 @@
             exit;
         }
 
-        // Log the entry to a file
-        $list="/home/ei233/mail-list";
-        $number = count(file($list)); // Get number of previous entries
-        $curr_number = $number+1;
-
-        $listfile = fopen($list, "a");// or die("Unable to open file ".$list);
-        $new_entry = $curr_number ."\t". date("d/m/Y") ."\t". date("H:i:s") ."\t". $name ."\t". $phone ."\t". $acs ."\t". $items ."\t". $email ."\t". $message."\t";
-        fwrite($listfile,$new_entry);
-        fclose($listfile);           
-
         // Set the recipient email address.
         $recipient = "Lefteris <sendtolefteris@gmail.com>, Michalis <mixalisef@gmail.com>";
 
@@ -75,7 +65,7 @@
         }
 
         // Send sms
-        $keyfile = fopen("/home/ei233/key", "r") or die("Unable to open file with sms key");
+        $keyfile = fopen("cyta-sms-key", "r") or die("Unable to open file with sms key");
         $key=fgets($keyfile);
         fclose($keyfile);
 
