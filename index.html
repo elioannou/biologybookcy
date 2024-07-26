@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Βιβλίο βοήθημα με 300 λυμένες ασκήσεις Βιολογίας βασισμένες στην ύλη της Γ' Λυκείου (Κύπρος) για τη σχολική χρονιά 2021-2022"/>
+    <meta name="description" content="Βιβλίο βοήθημα με 300 λυμένες ασκήσεις Βιολογίας βασισμένες στην ύλη της Γ' Λυκείου (Κύπρος) για τη σχολική χρονιά 2024-2025"/>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Βιβλίο Ασκήσεων Βιολογίας Γ' Λυκείου Κύπρου">
@@ -85,7 +85,7 @@
 	  <div class="col-md-6 col-sm-6 col-sm-pull-6">
 	    <div class="mu-hero-left">
 	      <h1>300 Λυμένες Ασκήσεις Βιολογίας</h1>
-	      <p>Βασισμένες στην ύλη της Γ' Λυκείου (Κύπρου) για τη σχολική χρονιά 2022-2023.</p>
+	      <p>Βασισμένες στην ύλη της Γ' Λυκείου (Κύπρου) για τη σχολική χρονιά 2024-2025.</p>
 	      <p>Ιδανικό για προετοιμασία για τις παγκύπριες εξετάσεις Βιολογίας.</p>
 	      <p>Αγοράστε μέσω αυτής της ιστοσελίδας και σε επιλεγμένα βιβλιοπωλεία στην τιμή των 30€.</p>
 	      <a href="#mu-contact" class="mu-primary-btn">Αγορά τώρα</a>
@@ -346,7 +346,7 @@
 			  συνέγραψε αυτό το βιβλίο αφού εντόπισε την έλλειψη υλικού προετοιμασίας και εξάσκησης για
 			  μαθητές Γ' Λυκείου που να είναι προσαρμοσμένο στην πρόσφατα αναθεωρημένη ύλη του μαθήματος
 			  Βιολογίας. </p>
-			<p>Επικοινωνήστε με τον Μιχάλη για οποιαδήποτε βοήθεια ή διευκρίνηση.</p>
+			<p>Επικοινωνήστε με τον Μιχάλη για οποιαδήποτε βοήθεια ή διευκρίνιση.</p>
 			<div class="mu-author-social">
 			  <a href="tel:+35799450616"> <i class="fas fa-phone"></i> 99 450616</a>
 			  <a href="mailto:mixalisef@gmail.com"> <i class="fas fa-envelope"></i> mixalisef@gmail.com</a>
@@ -624,22 +624,44 @@
 		  </ul>
 		</div>
 		<!-- Start Contact Content -->
+		
 		<div class="mu-contact-content">
-
+		  
+		  <script type="text/javascript">
+		    var submitted=false;
+		    function disableSubmit() {
+			var submitButton = document.getElementById('submitButton');
+			submitButton.disabled = true;
+			submitButton.innerText = '...';
+			submitted = true;
+		    }
+		  </script>
+		  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"
+			  onload="if(submitted) {document.getElementById('order-form').style.display='none';
+				  document.getElementById('thankYouMessage').style.display='block';}"></iframe>
+		  
 		  <div id="form-messages"></div>
-		  <form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
+		  <form id="order-form" method="post"
+			action="https://docs.google.com/forms/d/e/1FAIpQLSf8CnMec7SjBjZCxHDKejs_ParWoElOebwCwaFv0Xxez1YQsA/formResponse"
+			class="mu-contact-form" target="hidden_iframe" onsubmit="disableSubmit()">
 		    <div class="form-group">
-		      <input type="text" class="col-xs-12" style="outline:0" placeholder="Ονοματεπώνυμο" id="name" name="name" required>
-		    </div><span class="validity"></span>
-		    <div class="form-group">
-		      <input type="tel" class="col-xs-12" style="outline:0" placeholder="Τηλέφωνο" id="phone" name="phone" required><span class="validity"></span>
+		      <input type="text" class="col-xs-12" style="outline:0" placeholder="Ονοματεπώνυμο" id="name"
+			name="entry.2005620554" pattern="[a-zA-Z\u0370-\u03FF\u1F00-\u1FFF ]+" required>
 		    </div>
+		    <div class="form-group">
+		      <input type="tel" class="col-xs-12" style="outline:0" placeholder="Τηλέφωνο (Κύπρου)" id="phone"
+		      name="entry.1166974658" pattern="9[0-9]{7}" oninvalid="this.setCustomValidity('Εισάγετε 8-ψήφιο αριθμό που ξεκινά από 9')"  onchange="try{setCustomValidity('')}catch(e){}"  oninput="setCustomValidity(' ')" required>
+		    </div>
+		    <div class="form-group">
+		      <input type="email" class="col-xs-12" style="outline:0" placeholder="Ηλεκτρονικό ταχυδρομείο" id="email"
+			     name="entry.1045781291" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"  oninvalid="this.setCustomValidity('Εισάγετε έγκυρη διεύθυνση email')"  onchange="try{setCustomValidity('')}catch(e){}"  oninput="setCustomValidity(' ')" required>
+		    </div> 
 		    <div class="form-group row">
 		      <label for="acs" class="col-xs-3 col-form-label" >Σημείο ACS</label>
-		      <select id="acs" name="acs" class="col-xs-4 col-form-control" style="padding:0;" required><span class="validity"></span>
+		      <select id="acs" name="entry.762506667" class="col-xs-4 col-form-control" style="padding:0;" required>
 			<option selected value="">Επιλέξτε...</option>
 			<option value="" disabled style="font-weight:bold;color:black">ΛΕΥΚΩΣΙΑ</option>
-			<option>Ευαγόρου</option>
+			<option>Άγιος Δομέτιος</option>
 			<option>Πλατεία Ελευθερίας</option>
 			<option>Μιχαλακοπούλου</option>
 			<option>Στρόβολος</option>
@@ -648,10 +670,12 @@
 			<option>Στράκκα</option>
 			<option>Παλλουριώτισσα</option>
 			<option>Πέρα Χωριό Νήσου</option>
-			<option>Βιομ.Περ.Στροβόλου</option>
-			<option>Λατσιά</option>
+			<option>Πλατύ Αγλαντζιάς</option>
+			<option>Βιομ.Περ.Στροβόλου (Βάρκιζα)</option>
+			<option>Λατσιά (Κρανιδιώτη)</option>
 			<option>Κοκκινοτριμιθιά</option>
 			<option>Αστρομερίτης</option>
+			<option>Αρεδιού</option>
 			<option>Κακοπετριά</option>
 			<option>Εργάτες</option>
 			<option>Παλαιχώρι</option>
@@ -662,6 +686,7 @@
 			<option>Kολωνακίου</option>
 			<option>Ύψωνας</option>
 			<option>Τζαμούδα</option>
+			<option>Άγιος Τύχωνας</option>
 			<option>Επισκοπή</option>
 			<option>Αγρός</option>
 			<option>Πισσούρι</option>
@@ -678,7 +703,7 @@
 			<option disabled style="font-weight:bold;color:black"> ΠΑΦΟΣ </option>
 			<option>Πάφος - Κεντρικό</option>
 			<option>Πάφος - Δικαστήρια</option>
-			<option>Πόλη Χρυσοχούς </option>
+			<option>Πόλη Χρυσοχούς</option>
 			<option>Χλώρακα</option>
 			<option disabled style="font-weight:bold;color:black"> ΑΜΜΟΧΩΣΤΟΣ </option>
 			<option>Παραλίμνι</option>
@@ -687,7 +712,7 @@
 			<option>Δερύνεια</option>
 		      </select>
 		      <label for="items" class="col-sm-2 col-form-label" >Τεμάχια</label>
-		      <select id="items" name="items" class="col-sm-2 col-form-control" style="padding:0;" required>
+		      <select id="items" name="entry.1991186418" class="col-sm-2 col-form-control" style="padding:0;" required>
 			<option selected>1</option>
 			<option>2</option>
 			<option>3</option>
@@ -696,14 +721,15 @@
 		      </select>
 		    </div>
 		    <div class="form-group">
-		      <input type="" class="form-control" placeholder="Ηλεκτρονικό ταχυδρομείο (προαιρετικό)" id="email" name="email">
+		      <textarea class="form-control" placeholder="Μήνυμα (προαιρετικό)" id="message" name="entry.839337160"></textarea>
 		    </div>
-		    <div class="form-group">
-		      <textarea class="form-control" placeholder="Μήνυμα (προαιρετικό)" id="message" name="message"></textarea>
-		    </div>
-		    <button type="submit" class="mu-send-msg-btn"><span>Υποβολή</span></button>
+		    <button type="submit" class="mu-send-msg-btn" id="submitButton"><span>Υποβολή</span></button>
 		  </form>
 
+		  <div id="thankYouMessage">
+		    <h3>Ευχαριστούμε!</h3>
+		    <p>Η παραγγελία σας καταχωρήθηκε με επιτυχία.</p>
+		  </div>
 
 		</div>
 		<!-- End Contact Content -->
@@ -737,7 +763,7 @@
 	    <!-- <a href="#"><i class="fa fa-google-plus"></i></a> -->
 	    <a href="https://cy.linkedin.com/in/michalis-efthyvoulou-439a2050"><i class="fa fa-linkedin"></i></a>
 	  </div>
-	  <p class="mu-copyright">&copy; 2022 Michalis Efthyvoulou. All rights reserved.</p>
+	  <p class="mu-copyright">&copy; 2024 Michalis Efthyvoulou. All rights reserved.</p>
 	</div>
       </div>
 

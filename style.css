@@ -28,6 +28,8 @@ Version: 1.0
 /*--------------------*/
 /* BASIC TYPOGRAPHY */
 /*--------------------*/
+
+
 body,
 html {
 	overflow-x:hidden;
@@ -170,6 +172,11 @@ button {
 button:focus {
 	outline: none;
 	border: none;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
 
 /*Wordpress default class*/
@@ -935,6 +942,11 @@ button:focus {
 	margin-bottom: 24px;
 }
 
+.mu-contact-form .form-group input:valid {
+	border: 3px solid #107d67;
+}
+
+
 .mu-contact-form .form-group textarea{
 	color: #333;
 	background: transparent;
@@ -1342,3 +1354,18 @@ button:focus {
 	
 }
 
+#thankYouMessage {
+    display: none;
+    background-color:#ccdfe0;
+    color:  #007682;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+input:valid {
+    border-color: green;
+}
+input:invalid {
+    border-color: red;
+}
